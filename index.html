@@ -221,7 +221,9 @@ function formatTime(sec){
 }
 
 function formatClock(date){
- return new Date(date).toTimeString().slice(0,5);
+ let d = new Date(Number(date));
+ if(isNaN(d)) return "--:--";
+ return d.toTimeString().slice(0,5);
 }
 
 function getDayName(dateStr){
